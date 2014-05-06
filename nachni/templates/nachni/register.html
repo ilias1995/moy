@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'nachni/css/style.css' %}" />
+	<link rel="stylesheet" href="{% static 'nachni/css/bootstrap-responsive.css' %}" />
+	<script src="{% static 'nachni/js/bootstrap.js' %}"></script>
+	<script src="{% static 'nachni/js/jquery.js' %}"></script>
+</head>
+<body class="body">
+<div class="head">
+</div>
+	<div class="container">
+	<div class="container">
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="email">Имя пользователя:</label>
+        <input type="text" name="email" value="" id="email"/>
+        <label for="password">Пароль:</label>
+        <input type="password" name="password" value="" id="username">
+
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="{{next|escape}}" />
+        
+    </form>
+	</div>
+	</div>
+</body>
+</html>

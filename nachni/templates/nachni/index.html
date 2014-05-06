@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<html>
+<head>
+	{%for index in index%}
+	<title>{{ index.title }}</title>
+	{%endfor%}
+	<link rel="stylesheet" href="{% static 'nachni/css/bootstrap.css' %}" />
+	<link rel="stylesheet" href="{% static 'nachni/css/style.css' %}" />
+	<link rel="stylesheet" href="{% static 'nachni/css/bootstrap-responsive.css' %}" />
+	<script src="{% static 'nachni/js/bootstrap.js' %}"></script>
+	<script src="{% static 'nachni/js/jquery.js' %}"></script>
+</head>
+<body class="body">
+{% for index in index %}
+<div class="head">
+	<h4>{{ index.head }}</h4>
+	<div class="submit">
+		<a href="login"><input class="submit1" type="submit" value="Login"></a>
+		<a href="register"><input class="submit2" type="submit" value="Rgister"></a>
+	</div>
+	
+</div>
+	<div class="container">
+    <h1>{{ index.nazvanie }}</h1>
+    <p>{{ index.context }}</p>
+	</div>
+		<div class="next">
+		<a href="glavnoe"><input class="next1" type="submit" value="Next"></a>
+	</div>
+	{% endfor %}
+</body>
+</html>
